@@ -1,10 +1,4 @@
 TaskMaster::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -46,4 +40,16 @@ TaskMaster::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'log_in' => 'sessions#new'
+  get 'log_out' => 'sessions#destroy'
+  resources :users
+  resources :sessions
+
+  resources :pages, only: [:new, :create]
+
+  #keep these at the bottom of your file. They should be the last routes.
+  get "/:slug", to: "pages#show", as: :slug
+  get "/:slug/edit", to: "pages#edit", as: :edit_slug
+  put "/:slug", to: "pages#update", as: :update_slug
+  post "/:slug", to: "pages#destroy", as: :destroy_slug
 end

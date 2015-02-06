@@ -1,7 +1,7 @@
 # Givens
 
 Given "I am on the log in page" do
-  visit new_user_session_path
+  visit new_session_path
 end
 
 Given "that user is logged in" do

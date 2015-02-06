@@ -6,7 +6,7 @@ Feature: User sessions
       | password_confirmation | pass            |
     And I am on the log in page
     When I fill in the following:
-      | E-Mail   | dan@example.com |
+      | Email   | dan@example.com |
       | Password | pass            |
     And I press "Log In"
     Then I should see "Successfully logged in."
