@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
 
+gem 'authem'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootstrap-will_paginate'
 gem 'decent_exposure', git: "git://github.com/voxdolo/decent_exposure.git", branch: "master"
